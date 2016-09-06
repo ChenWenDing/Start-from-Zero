@@ -1,0 +1,842 @@
+/*@全局reset*/
+body{
+	font:12px/150% Arial,Verdana,"\5b8b\4f53";
+}
+body,ul,dl,dt,dd,h1,h2,h3,h4,h5,h6{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+h2,h3{
+	font-family: "microsoft yahei";
+	font-weight:400;
+}
+
+a:link,a:visited{
+	font-size: 12px;
+	color:#666;
+	text-decoration: none;
+}
+
+a:hover,a:active a:focus{
+	color:#C81623;
+}
+
+/*通过增加额外标签清除浮动*/
+.cf:after{
+	content: ".";
+	display: block;
+	height: 0;
+	clear:both;
+}
+
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+
+.pr{
+	position: relative;
+}
+
+.pa{
+	position: absolute;
+}
+
+.oh{
+	overflow: hidden;
+}
+
+.dfl>li{
+	float: left;
+}
+
+.dfl>dt{
+	float: left;
+}
+
+.dfl>dd{
+	float: left;
+}
+
+.dfl>div{
+	float: left;
+}
+/*全局reset@*/
+
+
+
+
+/*@顶部导航词条开始*/
+
+
+/*设置局部继承的样式*/
+#top{
+	width:100%;
+	height: 30px;
+	color:#666;
+	line-height: 30px;
+	background: #F1F1F1;
+}
+/*增加额外标签清除浮动，这样就可以用auto自动左右居中*/
+.topBar,.banner,.bottomBar,.w{
+	width: 1210px;
+	margin:0px auto;
+}
+
+/*每个列表的列表项左浮动用于横向排列，设置内边距调整UI*/
+.topBar ul li{
+	float: left;
+	padding: 0px 8px;
+}
+
+
+
+/*@二级菜单*/
+
+.topBar .pr:hover{
+	background-color: white;
+	border:1px solid #ddd;
+	margin:-1px;
+}
+
+.submenu{
+	position: absolute;
+	left:-999em;
+	border: 1px solid #ddd;
+	background: white;
+	z-index: 1;
+}
+
+.pr:hover .overrideBorder{
+	position: absolute;
+	bottom:-5px;
+	right: 0px;
+	width: 100%;
+	height: 10px;
+	background:white;
+	z-index: 100;
+}
+
+.topBar .pr:hover .submenu{
+	top: 30px;
+	left:-1px;
+}
+/*二级菜单@*/
+
+
+
+
+/*@城市选择*/
+.serveList{
+	line-height: 24px;
+	padding-top:5px; 
+	padding-bottom: 8px;
+}
+/*inline-block用于自动排列，并可设置具体内容宽度，也可用float代替*/
+.item{
+	display: inline-block;
+}
+
+.serveCountry,.serveBusiness{	
+	padding-top:5px;
+}
+
+.serveCountry{
+	padding-left: 10px;
+	width: 315px;
+}
+
+.serveCountry~.item{
+	width: 40px;
+	padding-left: 15px;
+}
+/*城市选择@*/
+
+
+
+/*@旋转三角icon*/
+.outer{
+	/*让inner可以相对于outer定位*/
+	position: relative;
+	/*控制锚元素和三角之间的空隙*/
+	padding-right: 18px;
+}
+/*之所以不用float定位是因为如果用float定位需要同级别的锚元素也浮动，两者才能在同一行，但是这样表示需要依赖别的元素*/
+.innerRight{
+	/*解决变换前和变换后之间的视觉间隔*/
+	height: 8px;
+	/*相对于outer定位，将inner位于锚元素右边*/
+	position: absolute;
+	top:12px;
+	right: 2px;
+	/*超出容器的内容部分隐藏，用于露出菱形的一半三角部分*/
+	overflow: hidden;
+	/*菱形的样式*/
+	font-weight: 400;
+	font-size:15px;
+	font-family: consolas;
+	color: #6A6A6A;
+	line-height:15px ;
+	/*清除i元素的italic样式*/
+	font-style: normal;
+	/*反向过渡*/
+	transition:transform .1s ease-in 0s;
+	-webkit-transition:-webkit-transform .1s ease-in 0s;
+}
+/*移动自身位置，配合inner的overfolw属性露出菱形的一半*/
+.innerRight s{
+	position:relative;
+	top:-7px;
+	/*清除s元素的italic样式*/
+	text-decoration: none;
+}
+/*inner容器顺时针旋转180度，作为内容的菱形也跟着旋转，可见内容由倒三角变成三角*/
+.pr:hover .innerRight{
+	transition:transform .1s ease-in 0s;
+	-webkit-transition:-webkit-transform .1s ease-in 0s;
+	transform:rotate(180deg);
+	-webkit-transform:rotate(180deg);
+}
+
+/*旋转三角icon@*/
+
+
+
+/*@分隔竖线*/
+.space{
+	width:1px;
+	height:12px;
+	background: #ddd;
+	margin-top: 9px;
+	/*用important覆盖li的内边距*/
+	padding: 0px 0px !important;
+}
+/*分隔竖线@*/
+
+
+
+/*@左侧icon*/
+.outerBg{
+	padding-left: 18px;
+	background:url(images/icons/icon1.png) 0 5px no-repeat;
+}
+.topBar li:hover .outerBg{
+	background:url(images/icons/icon1.png) 0 -20px no-repeat; 
+}
+/*左侧icon@*/
+
+
+
+/*@我的京东二级菜单*/
+.myJd{
+	width: 250px;
+	overflow: hidden;
+	padding: 0px 10px 10px 20px;
+	vertical-align: center;
+}
+.myJd~.item{
+	padding-left: 20px;
+	width:100px;
+}
+
+.personHead{
+	float: left;
+}
+
+.personHead img{
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+}
+/**/
+.myJd .login{
+	padding-top: 6px;
+	font-weight: 700;
+}
+/*我的京东二级菜单@*/
+
+
+
+/*@客服服务列表*/
+.serveCustomer{
+	width: 170px;
+}
+
+.serveCustomer,.serveBusiness{
+	padding-left: 10px;
+	font-weight: 700;
+}
+
+.serveCustomer~.item{
+	display: inline-block;
+	width:70px;
+	padding-left: 10px;
+}
+.serveBusiness{
+	border-top: 1px dotted #ccc;
+	margin-top: 5px;
+}
+/*客服服务列表@*/
+
+
+
+/*@网站导航二级菜单*/
+/*单独设置二级菜单的偏移量，使横向展示*/
+.topBar .pr:hover .webnav{
+	width: 1210px;
+	left: -1129px;
+	padding: 15px 0;
+}
+/*每列宽度*/
+.navlist{
+	border-left: 1px solid #ddd;
+	width:260px;
+	float: left;
+	padding-left: 20px;
+	line-height: 24px;
+}
+
+/*取消第一列的左边框，消除边框叠加效果，调整第一列的宽度放置4小列*/
+.navlist:first-child{
+	width: 347px;
+	border: none;
+}
+
+/*网站导航的分类*/
+.servenav{
+	font-size: 14px;
+	font-weight: 700;
+	margin-bottom: 6px;
+}
+/*每个频道的最大内容宽度*/
+.navlist .item{
+	margin-right: -5px;/*通过取margin负值解决inline-block盒模型之间的间隔*/
+	width:86px;
+}
+/*网站导航二级菜单@*/
+
+/*顶部导航词条@*/
+
+
+
+
+/*@顶部Banner*/
+
+#middle{
+	background: #fde20d;
+	height:80px;
+}
+
+.banner{
+	position: relative;
+	text-align: center;
+}
+
+#downBanner{
+	width: 19px;
+	height: 19px;
+	position: absolute;
+	top: 5px;
+	right:5px;
+	background: url(images/icons/icon2.png) 0 0 no-repeat;
+}
+
+#downBanner:hover{
+	background: url(images/icons/icon2.png) 0px -19px no-repeat;
+}
+/*顶部Banner@*/
+
+
+#bottom{
+	height: 100px;
+}
+
+.logo,.searchBox{
+	float: left;
+}
+
+.logo{
+	margin:20px 92px 0px 0;
+}
+
+.searchBox{
+	width:538px;
+	margin-top:25px;
+}
+
+.searchText{
+	float: left;
+	width: 456px;
+	height: 30px;
+	padding-left: 1px;
+	margin-bottom: 2px;
+	outline: none;
+	border:2px solid #C81623;
+	line-height: 24px;
+	font-size: 14px;
+	font-family: "microsoft yahei";
+}
+
+.searchButton{
+	outline: none;
+	float: left;
+	width:76px; 
+	height:36px;
+	color:white;
+	background: #C81623;
+	border: none;
+	font-size: 16px;
+	font-family: "microsoft yahei";
+}
+
+.hotwords{
+	float:left;
+	height: 20px;
+	overflow: hidden;
+	font-size: 10px;
+}
+
+.hotwords .item{
+	line-height:20px;
+	margin-right:3px;
+}
+
+.shoppingCart{
+	float: right;
+	margin:25px 65px 0 0;
+	padding-left: 40px;
+	padding-right: 10px;
+	background:url(images/icons/icon1.png) 15px -49px no-repeat;
+	border:1px solid #ddd;
+	line-height: 34px;
+}
+
+.shoppingCart:hover{
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.shoppingCart .submenu{
+	width: 278px;
+	padding: 10px 15px;
+	border-top:1px solid #ddd;
+}
+
+.shoppingCart:hover .submenu{
+	top:35px;
+	left:-174px;
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.shoppingCart .outer{
+	padding-right: 25px;
+}
+
+.shoppingCart .innerRight{
+	height: 6px;
+	top: 15px;
+}
+
+.goodsAmount{
+	display: inline-block;
+	position: absolute;
+	top: -4px;
+	left: 100px;
+	background: #C81623;
+	border-radius:7px 7px 7px 0px;
+	color: white;
+	line-height: 12px;
+	padding: 1px 4px;
+}
+
+.nogoods{
+	overflow: hidden;
+	padding-left: 30px;
+	line-height: 49px;	
+	color:#999;
+	line-height: 49px;
+}
+
+.nogoods img{
+	width: 56px;
+	vertical-align: top;
+}
+
+
+
+#navBar{
+	height: 44px;
+	border-bottom:2px solid #B1191A;
+	font-family: "microsoft yahei";
+	color: rgb(51,51,51);
+}
+
+.channels>li>a{	
+	padding: 0 20px;
+	font-size: 16px;
+	line-height: 44px;
+}
+
+.channels li>a:link,.channels li>a:visited{
+	color: rgb(51,51,51);
+}
+
+.channels li>a:hover,.channels li>a:active,.channels li>a:focus{
+	color: #C81623;
+}
+
+#goodsClass{
+	width: 210px;
+	background:#B1191A;
+}
+
+#goodsClass>a{
+	color:white;
+	padding: 0 10px;
+	font-size: 15px;
+}
+
+#goodsClass>ul{
+	position: absolute;
+	margin-top: 2px;
+	background:#c81623;
+}
+
+#goodsClass>ul>li{
+	position: relative;
+	width:209px;
+	font-size: 15px;
+	color: #fff;
+	height: 31px;
+	line-height: 31px;
+	border-left: 1px solid #B1191A;
+}
+
+#goodsClass .className{
+	padding:0 20px 0 10px;
+	height: 31px;
+	overflow: hidden;
+}
+
+#goodsClass .className>a{
+	font-size:14px;
+	color:#fff;
+}
+
+#goodsClass>ul>li>span{
+	position: absolute;
+	top: 9px;
+	right: 14px;
+	font: 400 12px/14px consolas;
+	z-index: 7;
+}
+
+#goodsClass>ul>li:hover>.className>a{
+	color:#c81623;
+}
+
+#goodsClass>ul>li:hover{
+	background:#f7f7f7;
+	color:#c81623; 
+}
+
+#goodsClass>ul>li:last-child:hover{
+	border-bottom: 1px solid #c81623;
+}
+
+#goodsClass>ul>li:hover>span{
+	width: 10px;
+	height: 31px;
+	top: 0px;
+	right:-5px;
+	text-indent: -999em;
+	background: #f7f7f7;
+}
+
+
+
+
+.classDetails{ 	
+	position: absolute;
+	left: -999em;
+	top:0px;
+	width: 998px;
+	border: 1px solid #c81623;
+	border-right:none;
+	z-index: 5;
+	background: #f7f7f7;
+}
+
+#goodsClass li:hover>.classDetails{
+	left:208px;
+}
+
+.classDetails>.left{
+	float: left;
+	padding-bottom: 5px;
+}
+
+.classDetails>.left>div{
+	width: 790px;
+	line-height: 24px;
+	overflow: hidden;
+	padding:20px 0 0 20px;
+	margin-bottom: 6px;
+}
+
+.classDetails>.left>div>a{
+	background: #7C7171;
+	color: #fff;
+	display:inline-block;
+	padding-left: 8px;
+	margin-right: 10px;
+}
+
+.classDetails>.left>div>a:hover{
+	background: #C81623;
+}
+
+.classDetails>.left>div>a>span{
+	background: #5c5251;
+	font: 400 16px consolas;
+	display: inline-block;
+	float: right;
+	width: 23px;
+	height: 24px;
+	margin-left:8px; 
+	text-align: center;
+}
+
+.classDetails>.left>div>a:hover>span{
+	background: #B1191A;
+}
+
+.classDetails>.left>dl{
+	width: 790px;
+	overflow: hidden;
+	padding-left: 20px;
+}
+
+.classDetails>.left>dl>dt{
+	position: relative;
+	float: left;
+	width: 54px;
+	font-weight: 700;
+	text-align: right;
+	padding: 6px 30px 0 0;
+	line-height: 24px;
+}
+
+.classDetails>.left>dl>dt>a>span{
+	position: absolute;
+	right: 15px;
+	top: 11px;
+	font: 400 12px/14px consolas;
+}
+
+.classDetails>.left>dl>dd{
+	width: 620px;
+	float: left;
+	line-height: 16px;
+	border-bottom: 1px solid #eee;
+	padding: 6px 0;
+}
+
+.classDetails>.left>dl:last-child>dd{
+	border-bottom: none;
+}
+
+.classDetails>.left>dl>dd>a{
+	display: block;
+	float: left;
+	border-left: 1px solid #e0e0e0;
+	padding: 0 8px;
+	margin: 4px 0;
+}
+
+
+
+.classDetails>.right{
+	float: right;
+	width: 168px; 
+	padding: 20px 20px 10px 0;
+}
+
+.classDetails>.right>div{
+	overflow: hidden;
+}
+
+.classDetails>.right>div>a{
+	float: left;
+	line-height: 0px;
+}
+
+.classDetails>.right>.up{
+	margin-bottom: 20px;
+}
+
+.classDetails>.right>.up>a{
+	margin: 1px 0 0 1px;
+}
+
+.classDetails>.right>.up>a>img{
+	width: 83px;
+	height: 35px;
+}
+
+.classDetails>.right>.down>a{
+	margin-bottom: 1px;
+}
+
+.classDetails>.right>.down>a>img{
+	width: 168px;
+	height: 134px;
+}
+
+
+
+#firstFrame .w{
+	padding-top:10px;
+}
+
+#firstFrame .bg{
+	width:210px;
+	height: 466px;
+}
+
+#firstFrame .advertise{
+	position: relative;
+	width: 730px;
+	height: 454px;
+	margin: 0px 8px 10px;
+	overflow: hidden;
+}
+
+#sliderad{
+	position: relative;
+	overflow: hidden;
+}
+
+#sliderad>a{
+	float: left;
+	line-height: 0px;
+}
+
+#sliderad>button{
+	width: 28px;
+	line-height:62px;
+	outline: none;
+	font-size: 22px;
+	color: #fff;
+	background:rgba(0,0,0,0.2);
+	border: none;
+	position: absolute;
+	top:-999em;
+	font-family: simsun;
+}
+
+#sliderad:hover>#lbt{
+	top: 196px;
+	left:0px;
+}
+
+#sliderad:hover>#rbt{
+	top: 196px;
+	right:0px;
+}
+
+.advertise ul{
+	position: absolute;
+	width: 750px;
+	height: 0px;
+	bottom: 25px;
+	text-align: center;
+}
+
+.advertise ul li:first-child{
+	background:#B1191A;
+}
+
+.advertise ul li{
+	display: inline-block;
+	width:18px;
+	height:18px;
+	margin-right: 3px;
+	border-radius:50%;
+	background:#3e3e3e;
+	color:#fff;
+	cursor: pointer;
+}
+
+
+#firstFrame .news{
+	width: 249px;
+	border: 1px solid #ddd;
+	border-right:none;
+}
+
+#firstFrame .news .newstitle{
+	padding: 0 10px;
+	line-height: 33px;
+}
+
+#firstFrame .news .newstitle h2{
+	font-size: 16px;
+}
+
+#firstFrame .news .newslist{
+	border-top: 1px solid #ddd;
+	padding: 4px 0px 4px 10px;
+}
+
+#firstFrame .news li{
+	line-height: 24px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+#firstFrame .news .newstitle{
+	color: rgb(102,102,102);
+}
+
+#firstFrame .news .newstitle span{
+	font: 400 12px/14px consolas;
+}
+
+#lifeService{
+	width: 250px;
+}
+
+#lifeService>ul>li{
+	float: left;
+	width: 61px;
+	height:69px;
+	border:1px solid #ddd;
+	border-top: none;
+	text-align: center;
+	border-right: none;
+	overflow: hidden;
+}
+
+#lifeService>ul>li>a{
+	display: block;
+	padding-bottom: 5px;
+}
+
+#lifeService>ul>li>a>span{
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	margin: 15px 18px 3px;
+}
+
+#right-pic{
+	margin-top:5px;
+}
+
+#right-pic>a>img{
+	width: 250px;
+	height: 75px;
+}
