@@ -1,19 +1,21 @@
 
 var downBanner=document.getElementById("downBanner");
 var middle=document.getElementById("middle");
-var count=0;
 var sliderad=document.getElementById("sliderad");
 var a=sliderad.getElementsByTagName("a");
-var lbt=document.getElementById("lbt");
-var rbt=document.getElementById("rbt");
 var autoslider=setInterval(slider,5000);
 var goodsClass=document.getElementById("goodsClass");
 var goodsClassli=goodsClass.getElementsByTagName("li");
 var classDetails=goodsClass.getElementsByClassName("classDetails");
 var slidernav=document.getElementById("slidernav");
 var slidernavli=slidernav.getElementsByTagName("li");
+var count=0;
+
+var lbt=document.getElementById("lbt");
+var rbt=document.getElementById("rbt");
 lbt.onclick=handlelbt;
 rbt.onclick=handlerbt;
+
 
 downBanner.onclick=function(){
 	middle.style.display="none";
@@ -69,6 +71,9 @@ function getScrollOffsets(w){
 function handlelbt(){
     clearInterval(autoslider);
     sliderad.insertBefore(a[a.length-1],a[0]);
+    slidernavli[count].style.backgroundColor="#3e3e3e";
+    count=(count+slidernavli.length-1)%slidernavli.length;
+    slidernavli[count].style.backgroundColor="#B1191A";
     autoslider=setInterval(slider,5000);
 }
 
@@ -80,10 +85,29 @@ function handlerbt(){
 
 function slider(){
     sliderad.appendChild(a[0]);
+    slidernavli[count].style.backgroundColor="#3e3e3e";
     count++;
-    slidernavli[count-1].style.backgroundColor="#3e3e3e";
     count=count%slidernavli.length;
     slidernavli[count].style.backgroundColor="#B1191A";
 }
 
 
+
+var serA=document.getElementById("serA");
+var serB=document.getElementById("serB");
+var serAli=serA.getElementsByTagName("li");
+var serBul=serB.getElementsByTagName("ul");
+serAli=Array.prototype.slice.call(serAli,0);
+serBul=Array.prototype.slice.call(serBul,0);
+
+for(var i=0;i<serAli.length;i++){
+	(function(n){
+		    serAli[i].onmouseenter=function(){
+			serAli.forEach(function(x){x.style.borderTop="none";x.style.borderBottom="1px solid #ddd";});
+			serAli[n].style.borderTop="2px solid #B1191A";
+			serAli[n].style.borderBottom="none";
+			serBul.forEach(function(x){x.style.display="none";});
+			serBul[n].style.display="block";
+		}
+	}(i));
+}

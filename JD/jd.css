@@ -111,7 +111,7 @@ a:hover,a:active a:focus{
 	z-index: 1;
 }
 
-.pr:hover .overrideBorder{
+.overrideBorder{
 	position: absolute;
 	bottom:-5px;
 	right: 0px;
@@ -119,6 +119,11 @@ a:hover,a:active a:focus{
 	height: 10px;
 	background:white;
 	z-index: 100;
+	display: none;
+}
+
+.pr:hover .overrideBorder{
+	display: block;
 }
 
 .topBar .pr:hover .submenu{
@@ -807,10 +812,18 @@ a:hover,a:active a:focus{
 
 #lifeService{
 	width: 250px;
+	height: 210px;
 }
 
-#lifeService>ul>li{
+#lifeService li{
 	float: left;
+}
+
+#lifeService a{
+	display: block;
+}
+
+#lifeServiceUp>li{
 	width: 61px;
 	height:69px;
 	border:1px solid #ddd;
@@ -820,17 +833,142 @@ a:hover,a:active a:focus{
 	overflow: hidden;
 }
 
-#lifeService>ul>li>a{
+#lifeServiceUp li>a{
 	display: block;
 	padding-bottom: 5px;
 }
 
-#lifeService>ul>li>a>span{
+#lifeServiceUp>li>a>span{
 	display: inline-block;
 	width: 25px;
 	height: 25px;
 	margin: 15px 18px 3px;
 }
+
+#lifeServiceDown{
+	float: left;
+}
+
+#lifeServiceDown ul{
+	overflow: hidden;
+}
+
+#lifeServiceDown li{
+	float: left;
+}
+
+#lifeServiceDown a{
+	display:block;
+}
+
+#serA>li{
+	width: 61px;
+	height: 27px;
+	line-height: 27px;
+	text-align: center;
+	border-left: 1px solid #ddd;
+	border-bottom:1px solid #ddd;
+}
+
+#serA>li:first-child{
+	border-top:2px solid #B1191A;
+	border-bottom:none;
+}
+
+
+#serB{
+	height: 19px;
+	border-left: 1px solid #ddd;
+	overflow: hidden;
+	padding: 15px 0 0 8px;
+}
+
+#serB li{
+	height: 19px;
+	line-height: 16px;
+	border-left: 1px solid #ddd;
+	overflow: hidden;
+	margin-right: 6px;
+}
+
+
+#serB>ul>li:first-child{
+	background: url(images/firstFrame/lifeService/iframe-san.png) center 0 no-repeat;
+}
+
+#serB>ul>li:first-child>a{
+	color: #fff;
+	padding: 0 2px;
+}
+
+#serC{
+	width: 240px;
+	height: 149px;
+	padding-left: 8px;
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	color:rgb(102,102,102);
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+#serC1a,#serC1b{
+	height:23px;
+	overflow: hidden;
+	padding-top: 10px;
+}
+
+#serC1a input{
+	width: 99px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	padding: 0 4px;
+	border: 1px solid #ccc;
+}
+
+#serC1b select{
+	width: 111px;
+	height:20px;
+	border: 1px solid #ccc;
+}
+
+#serC1b span{
+	color: #c81623;
+}
+
+#serC1c{
+	height: 26px;
+	margin-top: 10px;
+}
+
+#serC1c button{
+	width: 67px;
+	height: 26px;
+	border: none;
+	background: #c81623;
+	color: #fff;
+	border-radius:2px;
+}
+
+#serC1d{
+	height: 46px;
+	position: relative;
+}
+
+#serC1d a{
+	position: absolute;
+	bottom: 0px;
+}
+
+#serC1d span{
+	display: inline-block;
+	width: 22px;
+	height:10px;
+	margin-right:10px;
+	background: url(images/firstFrame/lifeService/iframe-hot.png);
+}
+
 
 #right-pic{
 	margin-top:5px;
