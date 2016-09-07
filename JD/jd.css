@@ -847,21 +847,40 @@ a:hover,a:active a:focus{
 
 #lifeServiceDown{
 	float: left;
+	width: 250px;
+	height: 210px;
+	position: relative;
+	display: none;
 }
 
-#lifeServiceDown ul{
-	overflow: hidden;
+#lifeServiceDown .close{
+	position: absolute;
+	right: 0px;
+	top:27px;
+	width: 20px;
+	height:20px;
+	line-height: 20px;
+	text-align: center;
 }
 
-#lifeServiceDown li{
+
+#lifeServiceDown .close:hover{
+	background:rgba(102, 102, 102,0.2);
+}
+
+.firstMenu{
 	float: left;
 }
 
-#lifeServiceDown a{
-	display:block;
+.firstMenu li{
+	float: left;
 }
 
-#serA>li{
+.firstMenu a{
+	display: block;
+}
+
+.firstMenu>li{
 	width: 61px;
 	height: 27px;
 	line-height: 27px;
@@ -870,55 +889,63 @@ a:hover,a:active a:focus{
 	border-bottom:1px solid #ddd;
 }
 
-#serA>li:first-child{
+.firstMenu>li:first-child{
 	border-top:2px solid #B1191A;
 	border-bottom:none;
 }
 
-
-#serB{
-	height: 19px;
-	border-left: 1px solid #ddd;
-	overflow: hidden;
+.secondMenu{
+	position: absolute;
+	top:27px;
+	left: 0px;
 	padding: 15px 0 0 8px;
+	display: none;
 }
 
-#serB li{
+.firstMenu>li:first-child .secondMenu{
+	display: block;
+}
+
+.secondMenu>li{
 	height: 19px;
 	line-height: 16px;
-	border-left: 1px solid #ddd;
-	overflow: hidden;
-	margin-right: 6px;
+    margin-right: 6px;
 }
 
-
-#serB>ul>li:first-child{
-	background: url(images/firstFrame/lifeService/iframe-san.png) center 0 no-repeat;
-}
-
-#serB>ul>li:first-child>a{
-	color: #fff;
+.secondMenu>li>a{
 	padding: 0 2px;
 }
 
-#serC{
-	width: 240px;
+.secondMenu>li:first-child{
+	background: url(images/firstFrame/lifeService/iframe-san.png) center 0 no-repeat;
+}
+
+.secondMenu>li:first-child>a{
+	color: #fff;
+}
+
+.thirdMenu{
+	display: none;
+	position: absolute;
+	top: 34px;
+	left:0px;
+	padding: 0px 0 0 8px;
+	width: 242px;
 	height: 149px;
-	padding-left: 8px;
-	border-left: 1px solid #ddd;
-	border-bottom: 1px solid #ddd;
 	color:rgb(102,102,102);
-	overflow: hidden;
-	white-space: nowrap;
 }
 
-#serC1a,#serC1b{
-	height:23px;
-	overflow: hidden;
-	padding-top: 10px;
+.secondMenu>li:first-child .thirdMenu{
+	display: block;
 }
 
-#serC1a input{
+.thirdMenu>li{
+	display: block;
+	margin-top: 10px;
+	clear: both;
+}
+
+.thirdMenu input{
 	width: 99px;
 	height: 20px;
 	line-height: 20px;
@@ -927,22 +954,17 @@ a:hover,a:active a:focus{
 	border: 1px solid #ccc;
 }
 
-#serC1b select{
+.thirdMenu .select1{
 	width: 111px;
 	height:20px;
 	border: 1px solid #ccc;
 }
 
-#serC1b span{
+.thirdMenu .price{
 	color: #c81623;
 }
 
-#serC1c{
-	height: 26px;
-	margin-top: 10px;
-}
-
-#serC1c button{
+.thirdMenu .btn1{
 	width: 67px;
 	height: 26px;
 	border: none;
@@ -951,17 +973,7 @@ a:hover,a:active a:focus{
 	border-radius:2px;
 }
 
-#serC1d{
-	height: 46px;
-	position: relative;
-}
-
-#serC1d a{
-	position: absolute;
-	bottom: 0px;
-}
-
-#serC1d span{
+.thirdMenu .iconHot{
 	display: inline-block;
 	width: 22px;
 	height:10px;
@@ -969,6 +981,19 @@ a:hover,a:active a:focus{
 	background: url(images/firstFrame/lifeService/iframe-hot.png);
 }
 
+.thirdMenu .corner{
+	position: absolute;
+	left: 10px;
+	bottom: 5px;
+}
+
+.thirdMenu .corner>a:link,.thirdMenu .corner>a:visited{
+	color: #005ea7;
+}
+
+.thirdMenu .corner:hover>a{
+	color: #C81623;
+}
 
 #right-pic{
 	margin-top:5px;

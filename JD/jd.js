@@ -93,21 +93,68 @@ function slider(){
 
 
 
-var serA=document.getElementById("serA");
-var serB=document.getElementById("serB");
-var serAli=serA.getElementsByTagName("li");
-var serBul=serB.getElementsByTagName("ul");
-serAli=Array.prototype.slice.call(serAli,0);
-serBul=Array.prototype.slice.call(serBul,0);
+var firstMenu=document.querySelector("#lifeServiceDown .firstMenu");
+var firstMenuli=document.querySelectorAll("#lifeServiceDown .firstMenu>li");
+var secondMenu=document.querySelectorAll("#lifeServiceDown .secondMenu");
+var secondMenuli;
+var thirdMenu;
 
-for(var i=0;i<serAli.length;i++){
+
+for(var i=0;i<firstMenuli.length;i++){
 	(function(n){
-		    serAli[i].onmouseenter=function(){
-			serAli.forEach(function(x){x.style.borderTop="none";x.style.borderBottom="1px solid #ddd";});
-			serAli[n].style.borderTop="2px solid #B1191A";
-			serAli[n].style.borderBottom="none";
-			serBul.forEach(function(x){x.style.display="none";});
-			serBul[n].style.display="block";
+		    firstMenuli[i].onmouseenter=function(){
+		    firstMenuli=Array.prototype.slice.call(firstMenuli,0);
+			secondMenu=Array.prototype.slice.call(secondMenu,0);
+			firstMenuli.forEach(function(x){x.style.borderTop="none";x.style.borderBottom="1px solid #ddd";});
+			firstMenuli[n].style.borderTop="2px solid #B1191A";
+			firstMenuli[n].style.borderBottom="none";
+			secondMenu.forEach(function(x){x.style.display="none";});
+			secondMenu[n].style.display="block";
+			secondMenuli=secondMenu[n].querySelectorAll("#lifeServiceDown .secondMenu>li");
+			thirdMenu=secondMenu[n].getElementsByClassName("thirdMenu");
+			for(var i=0;i<secondMenuli.length;i++){
+				(function(n){
+					    secondMenuli[i].onmouseenter=function(){
+					    secondMenuli=Array.prototype.slice.call(secondMenuli,0);
+			            thirdMenu=Array.prototype.slice.call(thirdMenu,0);	
+						secondMenuli.forEach(function(x){x.style.background="#fff";x.getElementsByTagName("a")[0].style.color="#666";});
+						secondMenuli[n].style.background="url(images/firstFrame/lifeService/iframe-san.png) center 0 no-repeat";
+						secondMenuli[n].getElementsByTagName("a")[0].style.color="#fff";
+						thirdMenu.forEach(function(x){x.style.display="none";});
+						thirdMenu[n].style.display="block";
+					}
+				}(i));
+			}
 		}
 	}(i));
 }
+
+
+
+var lifeup=document.getElementById("lifeServiceUp");
+var lifeupli=lifeup.getElementsByTagName('li');
+var lifedown=document.getElementById("lifeServiceDown");
+var lifedownclose=document.querySelector("#lifeServiceDown .close");
+
+for(i=0;i<4;i++){
+	(function(n){
+		lifeupli[i].onmouseenter=function(){
+			lifeup.style.display="none";
+	        lifedown.style.display="block";
+		};
+/*		lifeupli[i].onmousemove=function(){
+			lifeup.style.display="block";
+	        lifedown.style.display="none";
+		};*/
+	}(i));
+}
+
+ lifedownclose.onclick=function(){
+	lifeup.style.display="block";
+	lifedown.style.display="none";
+};
+
+document.onclick=function(){
+	lifeup.style.display="block";
+	lifedown.style.display="none";
+};
