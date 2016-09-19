@@ -133,17 +133,19 @@ for(var i=0;i<firstMenuli.length;i++){
 	$(".lifeu").bind({"mouseenter":lifeslide,"mouseleave":function(){$(".lifeu").bind("mouseenter",lifeslide)}});
 
 	$("#lifeServiceDown .close").click(function(){
-		lifeslide();
+		$("#lifeServiceUp").slideDown();
 		$(".lifeu").unbind("mouseenter");
 	});
 
-	$(document).click(function(){
-		$("#lifeServiceDown").slideUp();
+	$("#lifeServiceDown").find("*").not(".close").click(function(e){
+		e.stopPropagation();
+	});
+
+	$("body").click(function(){
 		$("#lifeServiceUp").slideDown();
 	});
-	
+
 	function lifeslide(){
     	$("#lifeServiceUp").slideUp();
-		$("#lifeServiceDown").slideDown();
     }
 });

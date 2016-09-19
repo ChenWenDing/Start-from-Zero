@@ -29,6 +29,7 @@ a:hover,a:active a:focus{
 	content: ".";
 	display: block;
 	height: 0;
+	visibility: hidden;
 	clear:both;
 }
 
@@ -840,6 +841,7 @@ a:hover,a:active a:focus{
 #lifeService{
 	width: 250px;
 	height: 210px;
+	overflow: hidden;
 }
 
 #lifeService li{
@@ -877,7 +879,6 @@ a:hover,a:active a:focus{
 	width: 250px;
 	height: 210px;
 	position: relative;
-	display: none;
 }
 
 #lifeServiceDown .close{
@@ -927,10 +928,15 @@ a:hover,a:active a:focus{
 	left: 0px;
 	padding: 15px 0 0 8px;
 	display: none;
+	border-left: 1px solid #ddd;
 }
 
 .firstMenu>li:first-child .secondMenu{
 	display: block;
+}
+
+.secondMenu{
+	width: 241px;
 }
 
 .secondMenu>li{
@@ -955,11 +961,13 @@ a:hover,a:active a:focus{
 	display: none;
 	position: absolute;
 	top: 34px;
-	left:0px;
+	left:-1px;
 	padding: 0px 0 0 8px;
-	width: 242px;
-	height: 149px;
+	width: 241px;
+	height: 148px;
 	color:rgb(102,102,102);
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
 }
 
 .secondMenu>li:first-child .thirdMenu{
