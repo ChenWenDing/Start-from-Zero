@@ -1,11 +1,16 @@
 ﻿<!DOCTYPE html>
 <html>
     <head>
-	    <title>京东首页</title>
+	    <title>京东(JD.COM)-综合网购首选-正品低价、品质保障、配送及时、轻松购物！</title>
 	    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-	    <link rel="stylesheet" type="text/css" href="jd.css"></link>
-        <script src="https://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
-        <script src="jd.js" charset="utf-8"></script>
+        <meta name="author" content="陈文顶">
+        <meta name="description" content="京东JD.COM-专业的综合网上购物商城,销售家电、数码通讯、电脑、家居百货、服装服饰、母婴、图书、食品等数万个品牌优质商品.便捷、诚信的服务，为您提供愉悦的网上购物体验!">
+        <meta name="Keywords" content="网上购物,网上商城,手机,笔记本,电脑,MP3,CD,VCD,DV,相机,数码,配件,手表,存储卡,京东">
+        <link rel="icon" type="image/x-icon" href="images/icons/favicon.ico">
+        <link rel="stylesheet" type="text/css" href="jd.css">
+        <script defer src="https://cdn.bootcss.com/jquery/3.1.0/jquery.min.js"></script>
+        <script defer src="jquery-ui.min.js"></script>
+        <script defer src="jd.js"></script>
     </head>
     <body>
         <!--顶部导航条 开始-->
@@ -3065,7 +3070,7 @@
                                         <ul class="thirdMenu">
                                             <li>
                                                 <label>号码</label>
-                                                <input class="" type="tel" placeholder="移动、联通、电信">
+                                                <input class="input1" type="tel" placeholder="移动、联通、电信">
                                             </li>
                                             <li>
                                                 <label>面值</label>
@@ -3094,21 +3099,20 @@
                                         <ul class="thirdMenu">
                                             <li>
                                                 <label>号码</label>
-                                                <input class="" type="tel" placeholder="移动、联通、电信">
+                                                <input class="input1" type="tel" placeholder="移动、联通、电信">
                                             </li>
                                             <li>
                                                 <label>面值</label>
-                                                <select class="select1">
-                                                    <option>38元</option>
-                                                    <option>48元</option>
-                                                    <option>58元</option>
-                                                    <option>88元</option>
-                                                    <option selected>138元</option>
-                                                    <option>158元</option>
-                                                    <option>238元</option>
-                                                    <option>268元</option>
-                                                    <option>338元</option>
-                                                    <option>588元</option>
+                                                <select class="select1 select2">
+                                                    <option selected>全国</option>
+                                                    <option>省内</option>
+                                                </select>
+                                                <select class="select1 select2">
+                                                    <option selected>50M</option>
+                                                    <option>100M</option>
+                                                    <option>200M</option>
+                                                    <option>300M</option>
+                                                    <option>400M</option>
                                                 </select>
                                                 <span class="price">￥7.5-￥10.0</span>
                                             </li>
@@ -3125,11 +3129,11 @@
                                         <ul class="thirdMenu">
                                             <li>
                                                 <label>号码</label>
-                                                <input class="" type="tel" placeholder="移动、联通、电信">
+                                                <input class="input1 input2" type="tel" placeholder="支持部分地区移动">
                                             </li>
                                             <li>
                                                 <label>月费</label>
-                                                <select class="select1">
+                                                <select class="select1 select3">
                                                     <option>38元</option>
                                                     <option>48元</option>
                                                     <option>58元</option>
@@ -3155,67 +3159,85 @@
                             </li>
                             <li>
                                 <a href="#">机票</a>
-                                <!--话费二级菜单 开始-->
+                                <!--机票二级菜单 开始-->
                                 <ul class="secondMenu">
-                                    <li>
+                                    <li id="gnjp">
                                         <a href="#">国内机票</a>
-                                        <!--话费充值三级菜单 开始-->
+                                        <!--国内机票三级菜单 开始-->
                                         <ul class="thirdMenu">
                                             <li>
-                                                <label>号码</label>
-                                                <input class="" type="tel" placeholder="移动、联通、电信">
+                                                <div class="select-type">
+                                                <label><input class="flight-type go-trip" type="radio" name="gnjp" checked><span>单程</span></label>
+                                                <label><input class="flight-type back-trip" type="radio" name="gnjp"><span>往返</span></label>
+                                                </div>
                                             </li>
                                             <li>
-                                                <label>面值</label>
-                                                <select class="select1">
-                                                    <option>10元</option>
-                                                    <option>20元</option>
-                                                    <option>30元</option>
-                                                    <option>50元</option>
-                                                    <option selected>100元</option>
-                                                    <option>200元</option>
-                                                    <option>300元</option>
-                                                    <option>500元</option>
-                                                </select>
-                                                <span class="price">￥98.0-￥100.0</span>
+                                                <div class="select-city">
+                                                <div class="city-area">
+                                                    <input class="start-city" placeholder="城市">
+                                                    <span class="area-title">出发</span>
+                                                </div>
+                                                <span class="change-city"></span>
+                                                <div class="city-area">
+                                                    <input class="end-city" placeholder="城市">
+                                                    <span class="area-title">出发</span>
+                                                </div>
+                                                </div>
+                                                <div class="select-date">
+                                                <div class="date-area">
+                                                    <input class="start-date" placeholder="日期">
+                                                    <span class="area-title">出发</span>
+                                                </div>
+                                                <div class="date-area date-back">
+                                                    <input class="end-date" placeholder="日期">
+                                                    <span class="area-title">返程</span>
+                                                </div>
+                                                </div>
                                             </li>
                                             <li>
-                                                <button class="btn1">办理变更</buttom>
+                                                <button class="btn1">机票查询</buttom>
                                             </li>
-                                            <li class="corner"><a href="#"><span class="iconHot"></span>冲500M送250M</a></li>
                                         </ul>
-                                        <!--话费充值三级菜单 结束-->
+                                        <!--国内机票三级菜单 结束-->
                                     </li>
-                                    <li>
-                                        <a href="#">国际/港澳台</a>
-                                        <!--流量充值三级菜单 开始-->
+                                    <li id="gjjp">
+                                        <a href="#">国际机票</a>
+                                        <!--国际机票三级菜单 开始-->
                                         <ul class="thirdMenu">
                                             <li>
-                                                <label>号码</label>
-                                                <input class="" type="tel" placeholder="移动、联通、电信">
+                                                <div class="select-type">
+                                                <label><input class="flight-type go-trip" type="radio" name="gjjp"><span>单程</span></label>
+                                                <label><input class="flight-type back-trip" type="radio" name="gjjp" checked><span>往返</span></label>
+                                                </div>
                                             </li>
                                             <li>
-                                                <label>面值</label>
-                                                <select class="select1">
-                                                    <option>38元</option>
-                                                    <option>48元</option>
-                                                    <option>58元</option>
-                                                    <option>88元</option>
-                                                    <option selected>138元</option>
-                                                    <option>158元</option>
-                                                    <option>238元</option>
-                                                    <option>268元</option>
-                                                    <option>338元</option>
-                                                    <option>588元</option>
-                                                </select>
-                                                <span class="price">￥98.0-￥100.0</span>
+                                                <div class="select-city">
+                                                <div class="city-area">
+                                                    <input class="start-city" placeholder="城市">
+                                                    <span class="area-title">出发</span>
+                                                </div>
+                                                <span class="change-city"></span>
+                                                <div class="city-area">
+                                                    <input class="end-city" placeholder="城市">
+                                                    <span class="area-title">出发</span>
+                                                </div>
+                                                </div>
+                                                <div class="select-date">
+                                                <div class="date-area">
+                                                    <input class="start-date" placeholder="日期">
+                                                    <span class="area-title">出发</span>
+                                                </div>
+                                                <div class="date-area date-back">
+                                                    <input class="end-date" placeholder="日期">
+                                                    <span class="area-title">返程</span>
+                                                </div>
+                                                </div>
                                             </li>
                                             <li>
-                                                <button class="btn1">办理变更</buttom>
+                                                <button class="btn1">机票查询</buttom>
                                             </li>
-                                            <li class="corner"><a href="#"><span class="iconHot"></span>冲500M送250M</a></li>
                                         </ul>
-                                        <!--流量充值三级菜单 结束-->
+                                        <!--国际机票三级菜单 结束-->
                                     </li>
                                     <li>
                                         <a href="#">特惠活动</a>
